@@ -1,0 +1,128 @@
+body {
+  height: 1000vh; /* 增加頁面高度以便滾動 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logoBox {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  img {
+    scale: 0.8;
+  }
+}
+
+.myLogo {
+  transition: transform 0.1s;
+}
+
+/* 跑馬字串1 */
+@keyframes marquee1 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee1-container {
+  margin: 50px 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  position: fixed;
+  top: 70%;
+  z-index: 100;
+
+  .marquee1 {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 0;
+
+    box-sizing: border-box;
+
+    p {
+      display: inline-block;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      font-weight: 800;
+      font-size: 60px;
+      color: #ff6144;
+      padding-top: 12px;
+      animation: marquee1 400s linear infinite;
+
+      opacity: 0;
+    }
+  }
+}
+/* 跑馬字串1 */
+
+.myBtnDiv {
+  position: fixed;
+  top: 45%; /* 中間位置 */
+  left: 50%;
+
+  transform: translate(-50%, -50%); /* 使其居中 */
+
+  #myButton {
+    opacity: 0; /* 初始隱藏 */
+
+    scale: 0.2;
+    padding: 10px 20px;
+    border: 3px solid #ff6144;
+    background-color: #ff6144;
+
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s;
+
+    a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  #myButton.show {
+    opacity: 1;
+    transition: 0.05s ease-in-out;
+    z-index: 200;
+  }
+
+  #myButton:hover {
+    box-shadow: 5px 5px #ffcb48;
+    border: 3px solid #ff6144;
+    background-color: #ffffff;
+
+    a {
+      color: #ff3c19;
+      font-weight: bold;
+    }
+  }
+}
+.newDiv {
+  opacity: 0;
+  width: 30vw;
+  z-index: 110;
+  margin-top: 50vh;
+  img {
+    margin: 10px 0;
+    border: 6px solid #ff3c19;
+    border-radius: 30px;
+  }
+}
+
+.newText {
+  h1 {
+    color: #ff6144;
+    margin: 20px 0;
+    padding: 10px;
+    border: 2px solid #ff3c19;
+    border-radius: 20px;
+  }
+}
